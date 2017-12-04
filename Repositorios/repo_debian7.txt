@@ -1,0 +1,112 @@
+## Repositorio Oficial
+deb http://http.us.debian.org/debian/ stable main contrib non-free
+deb-src http://http.us.debian.org/debian/ stable main contrib non-free
+
+
+## Repositorio de Seguridad
+deb http://security.debian.org/ stable/updates main contrib non-free
+deb-src http://security.debian.org/ stable/updates main contrib non-free
+
+
+## Repositorio Backports
+deb http://ftp.de.debian.org/debian-backports/debian wheezy-backports main
+
+
+## Repositorio Multimedia
+deb http://www.deb-multimedia.org wheezy main non-free
+deb-src http://www.deb-multimedia.org wheezy main non-free
+
+
+## Repositorio Escritorio KDE (Experimental)
+deb http://qt-kde.debian.net/debian experimental-snapshots main
+deb-src http://qt-kde.debian.net/debian experimental-snapshots main
+
+
+## Repositorio Escritorio Enlightenment E17
+deb http://ppa.launchpad.net/efl/trunk/ubuntu quantal main
+deb-src http://ppa.launchpad.net/efl/trunk/ubuntu quantal main
+
+
+## Repositorio Escritorio MATE
+deb http://packages.mate-desktop.org/repo/debian wheezy main
+
+
+## Repositorio Last.fm
+deb http://apt.last.fm/debian stable maintainers
+
+
+## Repositorio Navegador Iceweasel
+deb http://mozilla.debian.net/ wheezy-backports iceweasel-release
+
+
+# Repositorio Navegador Opera
+deb http://deb.opera.com/opera/ stable non-free
+
+
+# Repositorio Virtualbox
+deb http://download.virtualbox.org/virtualbox/debian squeeze contrib
+
+
+## Repositorio Esmska
+deb http://repo.palatinus.cz/stable /
+
+
+## Repositorio Google Linux
+deb http://dl.google.com/linux/deb/ stable main
+
+
+## Repositorio Jitsi
+deb http://download.jitsi.org/deb unstable/
+
+
+## Repositorio Playonlinux
+deb http://deb.playonlinux.com/ squeeze main
+
+
+## Repositorio de juegos PlayDeb
+deb http://archive.getdeb.net/ubuntu maverick-getdeb games
+
+
+## Repositorio de juegos Ubuntu Games
+deb http://archive.ubuntugames.org ubuntugames main
+
+
+## Repositorio de juego SONIC ROBO BLAST 2
+deb http://alam.srb2.org/debian lenny contrib
+deb-src http://alam.srb2.org/debian lenny contrib
+
+
+## Repositorio Linux Mint Debian Edition
+deb http://packages.linuxmint.com/ debian main import backport upstream romeo
+
+
+## Repositorio **NANOLX** (KDE tunning)
+deb http://www.nanolx.org/apt/ excelsior maintainers
+
+
+## Repositorio Dropbox
+deb http://linux.dropbox.com debian wheezy main
+deb-src http://linux.dropbox.com debian wheezy main
+
+
+## Repositorio Ajenti
+deb http://repo.ajenti.org/debian main main
+
+
+## Repositorio OPP-Debian
+deb http://debian.oppserver.net/debian wheezy contrib main non-free
+deb-src http://debian.oppserver.net/debian wheezy contrib main non-free
+
+
+## Repositorio OPP-DEBIAN XBMC
+deb http://debian.oppserver.net/xbmc/ wheezy main non-free contrib
+deb-src http://debian.oppserver.net/xbmc/ wheezy main non-free contrib
+
+
+## Repositorio Remastersys
+deb http://www.remastersys.com/debian wheezy main
+
+
+## Repositorio MMS
+deb http://www.prodeia.de/mms/squeeze binary/
+deb-src http://www.prodeia.de/mms source/

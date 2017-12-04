@@ -1,0 +1,31 @@
+En esta guía rápida estructuraremos lo mejor posible los pasos necesarios para
+seguir lo mejor posible el curso del IES San Clemente de Galicia para los alumnos
+de C.S. Administración de Sistemas en Red.
+Todo el curso podemos encontrarlo en:
+  https://manuais.iessanclemente.net/index.php/Curso_Platega:_Administraci%C3%B3n_de_dominios_en_redes_locais_con_GNU/Linux
+
+Nos centraremos principalmente en la instación y configuración de los S.O.'s:
+  Debian 9
+  Ubuntu 16.04 y 17.04
+  Windows 10
+
+Nos saltaremos la parte de preparación de las máquinas base.
+
+
+Las configuraciones básicas.
+Lo primero que haremos será configurar/cubrir nuestro archivo de variables 000_variables.sh
+con las opciones mas convenientes para nuestro entorno de desarrollo.
+(Aunque se trata de un entorno de desarrollo y pruebas se recomienda que los scripts
+se encuentren siempre protegidos y que solo el/los administradores puedan acceder a estes
+ya que algunos contienen información que podría ser utilizada por atacantes y/o el
+estudio de como se encuentra diseñado, distribuido, y protegido nuestro servidor)
+"No contamos que suceda nada ya que es para modo de pruebas"
+
+Pero es recomendable ir cogiendo como una practica habitual ocultar información sensible.
+
+En los scripts incluimos siempre la contraseña abc123. para hacer el proceso lo más
+automatizado posible cosa que no es recomendable que en los scripts se encuentren
+las PASSWORDS de los usuarios con PERMISOS ALTOS.
+
+
+Dicho estas pautas básicas para un administrador podremos comenzar.

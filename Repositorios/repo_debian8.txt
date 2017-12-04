@@ -1,0 +1,34 @@
+###DEBIAN JESSIE ESTABLE###
+### Fecha de repositorios 31/10/2017 ###
+
+
+## Repositorio Oficial
+deb http://http.us.debian.org/debian/ jessie main contrib non-free
+deb-src http://http.us.debian.org/debian/ jessie main contrib non-free
+
+deb http://mirrors.kernel.org/debian/ jessie main contrib non-free
+deb-src http://mirrors.kernel.org/debian/ jessie main contrib non-free
+
+
+
+## Repositorio de Seguridad
+deb http://security.debian.org/ jessie/updates main contrib non-free
+deb-src http://security.debian.org/ jessie/updates main contrib non-free
+
+
+# jessie-actualizaciones-sistema
+deb http://mirrors.kernel.org/debian/ jessie-updates main contrib non-free
+deb-src http://mirrors.kernel.org/debian/ jessie-updates main contrib non-free
+deb http://mirrors.kernel.org/debian jessie-proposed-updates main contrib non-free
+deb-src http://mirrors.kernel.org/debian jessie-proposed-updates main contrib non-free
+
+# jessie-backports
+deb http://mirrors.kernel.org/debian/ jessie-backports main contrib non-free
+deb-src http://mirrors.kernel.org/debian/ jessie-backports main contrib non-free
+
+
+
+## Repositorio Multimedia
+# deb http://www.deb-multimedia.org testing main non-free
+# deb http://www.deb-multimedia.org jessie main non-free
+# deb-src http://www.deb-multimedia.org jessie main non-free
