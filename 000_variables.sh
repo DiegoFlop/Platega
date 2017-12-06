@@ -55,9 +55,9 @@ ConfZonas=/mnt/floppy/Configuracion/zonasDNS.csv
 #############
 #    DHCP   #
 #############
-
-
-
+ConfDHCP=/etc/dhcp/dhcpd.conf
+ConfDefDHCP=/etc/default/isc-dhcp-server
+AmbitosDHCP=/mnt/floppy/Configuracion/ambitos.csv
 #############
 #    LDAP   #
 #############

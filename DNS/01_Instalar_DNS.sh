@@ -41,7 +41,7 @@ do
 # Comprobamos si en el archivo named.conf.local ya existe la zona directa
 	if [[ $(grep "^# Zona $i" ${DirConfDNS}named.conf.local | wc -l) = 1 ]]
 		then
-			echo "$FechaLog La zona directa: \"$i\" ya existe" > ../Salidas/DNS.sal
+			echo "$FechaLog La zona directa: \"$i\" ya existe" >> ../Salidas/DNS.sal
 		else
 			echo "# Zona $i
 			zone \"$i\" {
