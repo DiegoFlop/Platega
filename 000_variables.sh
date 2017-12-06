@@ -10,7 +10,9 @@
 #    COMUNES   #
 ################
 Fecha=`date +"%d-%m-%Y"`
+FechaLog=`date +"A las %T del %d-%m-%Y:=>"`
 Floopy=/mnt/floppy/
+DirConf=/mnt/floppy/Configuracion/
 
 #################
 #    SERVIDOR   #
@@ -40,6 +42,9 @@ ServerDomain=
 #    DNS   #
 ############
 
+DirConfDNS=/etc/bind/
+DirDbDNS=/var/cache/bind/
+ConfZonas=/mnt/floppy/Configuracion/zonasDNS.csv
 
 #############
 #    DDNS   #
