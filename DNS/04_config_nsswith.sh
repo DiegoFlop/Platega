@@ -2,8 +2,8 @@
 # Script creado por Fernández López, Diego
 # En este script simplemente modificaremos la linea de hosts: del archivo /etc/nsswitch.conf
 # lo que haremos sera comentar el actual y añadir posteriormente el nuestro.
-# Si da la casualidad de que el archivo ya esta configurado no hara ningun cambia
-# y nos añadira una linea a nuestro archivo de log indicando cual fue el motivo.
+# Si da la casualidad de que el archivo ya esta configurado no hará ningún cambia
+# y nos añadirá una linea a nuestro archivo de log indicando cual fue el motivo.
 ######################################
 #            Variables               #
 ######################################

@@ -1,8 +1,8 @@
 #!/bin/bash
 # Script creado por Fernández López, Diego
-# Con este configuraremos los ambotos para el DHCP lo primero que hacemos es
-# crear variables temporales que tomaran los valores del csv de ambitos una vez tomados
-# los agregamos a /etc/dhcp/dhcpd.conf y comprobamos que no exista ya el ambito.
+# Con este configuraremos los ámbitos para el DHCP lo primero que hacemos es
+# crear variables temporales que tomaran los valores del csv de ámbitos una vez tomados
+# los agregamos a /etc/dhcp/dhcpd.conf y comprobamos que no exista ya el ámbito.
 ######################################
 #            Variables               #
 ######################################
@@ -17,8 +17,8 @@ de ambitos en /Configuracion/ambitos.csv para ello
  puede conectarse de forma remota por SSH, con Notepad, otra terminal
 una vez que esté seguro de que esta configurado pulse ENTER...\n'
 
-# Eliminamos el ENTER del Sistema Widows para dejarolo como el sistema Linux
-sed -i 's/\r//g' /mnt/floppy/DHCP//mnt/floppy/DHCP/ambitos.csv
+# Eliminamos el ENTER del Sistema Widows para dejarlo como el sistema Linux
+sed -i 's/\r//g' $AmbitosDHCP
 
 for i in $(cat $AmbitosDHCP | grep "^[1-9].*" | cut -d"," -f1);
 do

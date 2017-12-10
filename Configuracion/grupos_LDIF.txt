@@ -1,0 +1,7 @@
+g-usuarios
+g-profes
+g-dam1-profes
+g-dam2-profes
+g-alum
+g-dam1-alum
+g-dam2-alum

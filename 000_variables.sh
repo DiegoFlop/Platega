@@ -19,23 +19,18 @@ DirConf=/mnt/floppy/Configuracion/
 #################
 CurrentNameServer=
 NewNameServer=
-TarjetaServer=
-ServerIp=
-ServerMask=
-ServerGate=
-ServerDns1=
-ServerDns2=
-ServerDns3=
-ServerDomain=
+TarjetaServer=enp0s3
+ServerIp=172.16.5.10
+ServerMask=24
+ServerGate=172.16.5.1
+ServerDns1=172.16.5.10
+ServerDns2=172.16.0.58
+ServerDns3=213.60.205.175
+ServerDomain=iescalquera.local
 
 #######################
 #    CLIENTE UBUNTU   #
 #######################
-
-########################
-#    CLIENTE WINDOWS   #
-########################
-
 
 
 ############
@@ -58,11 +53,16 @@ ConfZonas=/mnt/floppy/Configuracion/zonasDNS.csv
 ConfDHCP=/etc/dhcp/dhcpd.conf
 ConfDefDHCP=/etc/default/isc-dhcp-server
 AmbitosDHCP=/mnt/floppy/Configuracion/ambitos.csv
+ReservasDHCP=/mnt/floppy/Configuracion/reservas.csv
 #############
 #    LDAP   #
 #############
-
-
+DEBIAN_FRONTEND=noninteractive
+LDAPIp="172.16.5.10"
+LDAProot="admin"
+LDAPpass="abc123."
+DominioLDAP="iesmuralla.local"
+GIDinicial=9999
 ############
 #    NFS   #
 ############

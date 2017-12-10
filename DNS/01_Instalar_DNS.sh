@@ -75,15 +75,12 @@ iprev=(`echo "$i" | cut -d. -f1` `echo "$i" | cut -d. -f2` `echo "$i" | cut -d. 
 			echo "$FechaLog La zona iversa: \"$i\" ya existe" >> ../Salidas/DNS.sal
 		else
 			echo "# Zona $i
-		zone \"${iprev[2]}.${iprev[1]}.${iprev[0]}.in-addr.arpa\" {
+			zone \"${iprev[2]}.${iprev[1]}.${iprev[0]}.in-addr.arpa\" {
 			type master;
 			file \"db.$i\";
-		};
-		" >> ${DirConfDNS}named.conf.local
+			};
+			" >> ${DirConfDNS}named.conf.local
 		# Copiamos el archivo de la zona directa vacio para mantener los cambios basicos sin registros
 		cp ${DirDbDNS}db.$(cat $ConfZonas | grep "i" | cut -d "," -f1) ${DirDbDNS}db.$i
 	fi
 done
-############################################################################
-# El símbolo backslash "\" utilizado al final de la linea es meramente por organización
-# ya que con el le indicamos a la shell que la siguiente linea pertenece a la misma.

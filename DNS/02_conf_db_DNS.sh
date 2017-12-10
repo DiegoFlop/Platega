@@ -2,7 +2,7 @@
 # Script creado por Fernández López, Diego
 # lo primero que haremos en este script es llamar a script en el que contenemos
 # todos las variables y al script que contiene las posibles funciones a utilizar.
-# Después lo primero que haremos sera accer una copiar de la variable IFS que es
+# Después lo primero que haremos sera hacer una copiar de la variable IFS que es
 # la que contiene el separador por defecto de campos que usualmente es el backsapce
 # Seguidamente procederemos a realizar un FOR por si disponemos de varias zonas.
 # En el FOR lo que haremos sera filtrar por el campo 1 de nuestro archivo zonas.csv

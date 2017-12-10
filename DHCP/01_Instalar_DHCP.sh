@@ -1,9 +1,9 @@
 #!/bin/bash
 # Script creado por Fernández López, Diego
-# Con este script instalaremos el servicio DHCP para poder ofrecer ips comodamente
-# lo que hacemos es habilitar este servidor como un serivodr DHCP autorizado
+# Con este script instalaremos el servicio DHCP para poder ofrecer ips cómodamente
+# lo que hacemos es habilitar este servidor como un servidor DHCP autorizado
 # y posteriormente habilitar por que tarjeta ofrecemos el servicio. Si disponemos
-# de varias tarjetas no podriamos usar este script.
+# de varias tarjetas no podríamos usar este script.
 # Una vez indica la tarjeta a usar sacamos un registro para comprobar posteriormente
 # cual fue el resultado.
 ######################################

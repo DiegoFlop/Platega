@@ -19,6 +19,8 @@ do
     named-checkzone $i ${DirDbDNS}db.$i | tee >> ../Salidas/DNS.sal
     # El símbolo backslash "\" utilizado al final de la linea es meramente por organización
     # ya que con el le indicamos a la shell que la siguiente linea pertenece a la misma.
+    a=$(cat $ConfZonas| grep $i | cut -d, -f2)
+    iprev=(`echo "$a" | cut -d. -f1` `echo "$a" | cut -d. -f2` `echo "$a" | cut -d. -f3` `echo "$a" | cut -d. -f4`)
     named-checkzone ${iprev[2]}.${iprev[1]}.${iprev[0]}.in-addr.arpa \
     ${DirDbDNS}db.$(cat $ConfZonas | grep  "$i" | cut -d"," -f2) | tee >> ../Salidas/DNS.sal
 done
