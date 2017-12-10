@@ -1,0 +1,8 @@
+usuarios
+grupos
+maquinas
+alumnos usuarios
+profes usuarios
+dam1 alumnos usuarios
+dam2 alumnos usuarios
+aula01 maquinas

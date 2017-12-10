@@ -6,7 +6,7 @@
 #------------------------------------#
 #            Variables               #
 #------------------------------------#
-source /mnt/floppy/000_variables.sh
+source ../000_variables.sh
 source ../Funciones/DHCP_funciones.sh
 
 ############################################################################
@@ -17,16 +17,15 @@ de reservas en /Configuracion/reservas.csv para ello
  puede conectarse de forma remota por SSH, con Notepad, otra terminal
 una vez que esté seguro de que esta configurado pulse ENTER...\n'
 
-# Eliminamos el ENTER del Sistema Widows para dejarlo como el sistema Linux
-sed -i 's/\r//g' ../Configuracion/reservas.csv
+# Eliminamos el ENTER del Sistema Windows para dejarlo como el sistema Linux
+sed -i 's/\r//g' $ReservasDHCP
 
 for i in $(cat $ReservasDHCP | grep "^[0-9].*" | cut  -d"," -f3)
 do
-
-if [ $(grep "^# Reserva ip host $i" /etc/dhcp/dhcpd.conf |wc -l) = 1 ]
+if [ $(grep "^# Reserva ip host $(cat $ReservasDHCP | grep  $i |cut -d"," -f2)" /etc/dhcp/dhcpd.conf |wc -l) = 1 ]
 	then
 	echo "$FechaLog El host $i ya existe" >> ../Salidas/DHCP.sal
-	cat /etc/dhcp/dhcpd.conf | grep -A 5 "$i" >> ../Salidas/DHCP.sal
+	cat /etc/dhcp/dhcpd.conf | grep -A 5 "$(cat $ReservasDHCP | grep  $i |cut -d"," -f2)" >> ../Salidas/DHCP.sal
 	else
 	echo "# Reserva ip host $(cat $ReservasDHCP | grep  $i |cut -d"," -f2)
 		host $(cat $ReservasDHCP | grep  $i |cut -d"," -f2) {
@@ -35,8 +34,7 @@ if [ $(grep "^# Reserva ip host $i" /etc/dhcp/dhcpd.conf |wc -l) = 1 ]
 		ddns-hostname \"$(cat $ReservasDHCP | grep  $i |cut -d"," -f2)\";
     }
     " >> /etc/dhcp/dhcpd.conf
-  echo "$FechaLog Añadimos la reserva de $(cat $ReservasDHCP | grep  $i |cut -d"," -f2)
-   con la direccion MAC $(cat $ReservasDHCP | grep  $i | cut -d"," -f1) y direccion IP $i" >> ../Salidas/DHCP.sal
+  echo "$FechaLog Añadimos la reserva de $(cat $ReservasDHCP | grep  $i |cut -d"," -f2) con la direccion MAC $(cat $ReservasDHCP | grep  $i | cut -d"," -f1) y direccion IP $i" >> ../Salidas/DHCP.sal
 fi
 done
 

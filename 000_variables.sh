@@ -66,7 +66,15 @@ GIDinicial=9999
 ############
 #    NFS   #
 ############
-
+Disk=sdb
+DiskSize=5G
+DirUsers=/home/iesmuralla
+DirComun=/comun
+IPRed=172.16.5.0
+MaskRed=255.255.255.0
+NombreServer=dserverM00
+MountUser=/home/iesmuralla
+MountComun=/media/comun
 
 
 ################
