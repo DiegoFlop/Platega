@@ -14,5 +14,5 @@ slapcat -l backup.ldif
 
 # Hacemos unas comprobaciones:
 ldapsearch -x -LLL -s one -b dc=$(echo $DominioLDAP | cut -d. -f1),dc=$(echo $DominioLDAP | cut -d. -f2) dn >> ../Salidas/SAMBA3.sal
-getent passwd | tail -n 7 >> ../Salidas/SAMBA3.sal
+getent passwd | tail -n 15 >> ../Salidas/SAMBA3.sal
 getent group | tail -n 16 >> ../Salidas/SAMBA3.sal

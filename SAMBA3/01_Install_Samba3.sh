@@ -15,21 +15,13 @@ zcat /usr/share/doc/samba/examples/LDAP/samba.schema.gz > /etc/ldap/schema/samba
 mkdir /tmp/ldif
 
 
-slaptest -f schema_convert.conf -F /tmp/ldif
+slaptest -f ../Configuracion/schema_convert.conf -F /tmp/ldif
 
 # Copiamos el archivo samba.schema
-cp ../Configuracion/samba.ldif "/etc/ldap/schema/samba.ldif"
-
-
-# Cargamos el schema de samba al ldap
-
-ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/ldap/schema/samba.ldif
-
-
-#opcion rapida:
-#cp "/tmp/ldif/cn=config/cn=schema/cn={4}samba.ldif" "/etc/ldap/slapd.d/cn=config/cn=schema"
-#chown openldap: '/etc/ldap/slapd.d/cn=config/cn=schema/cn={4}samba.ldif'
-#service slapd restart
+# Copiamos o ficheiro samba.ldif
+cp "/tmp/ldif/cn=config/cn=schema/cn={4}samba.ldif" "/etc/ldap/slapd.d/cn=config/cn=schema"
+chown openldap: '/etc/ldap/slapd.d/cn=config/cn=schema/cn={4}samba.ldif'
+service slapd restart
 
 
 # Cargamos el fichero de indices:

@@ -5,7 +5,7 @@
 # Desactivamos las cuotas para poder configurarlas
 # Creamos los archivos de cuotas
 # Iniciamos las cuotas
-# Creamos 2 usuarios para crear las plantillas de cuota 
+# Creamos 2 usuarios para crear las plantillas de cuota
 ######################################
 #            Variables               #
 ######################################
@@ -26,14 +26,16 @@ sed -i '/'$cambio'/s/defaults/defaults,usrquota,grpquota/g' /etc/fstab
 mount -o remout $DirUsers
 mount -o remout $DirComun
 
+quotacheck -avug
 quotaoff -avug
 quotacheck -avug
 quotaon -av
 
 useradd profe -M -N -u 1001
 useradd alumno  -M -N -u 1002
+echo "$FechaLog $(cat /etc/passwd |!:)" >> ../Salidas/CUOTAS.sal
 
-setquota -u profe   $CuotaSoftP $CuotaHardP 0 0 /home/iescalquera
-setquota -u alumno  $CuotaSoftA $CuotaHardA 0 0 /home/iescalquera
+setquota -u profe   $CuotaSoftP $CuotaHardP 0 0 $DirUsers
+setquota -u alumno  $CuotaSoftA $CuotaHardA 0 0 $DirUsers
 
 repquota >> ../Salidas/CUOTAS.sal
