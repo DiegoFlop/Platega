@@ -13,7 +13,6 @@
 #            Variables               #
 ######################################
 source ../000_variables.sh
-source ../Funciones/LDAP_funciones.sh
 
 # Guardamos la variable IFS
 SaveIFS=$IFS
@@ -25,7 +24,10 @@ rm /tmp/ous.ldif
 # Advertimos de que configuren las OU antes de continuar con la Configuración
 read -rsp $'Por favor antes de continuar asegurese de tener configurado el archivo
  /Configuracion/ous_LDIF.txt para ello puede conectarse de forma remota por SSH,
- con Notepad, otra terminal una vez que esté seguro de que esta configurado pulse ENTER...\n'
+ con Notepad, otra terminal (Cree las ous en orden gerarquico para la creacion correcta
+ y separe las ramas por espacios EJ: dam1 alumnos usuarios) para una OU que contenga
+ dentro de la OU usuarios una sub OU que se llama alumnos y esta a su vez tiene otra
+ sub OU llamada dam1  una vez que esté seguro de que esta configurado pulse ENTER...\n'
 
 for i in $(cat  ../Configuracion/ous_LDIF.txt)
 do
@@ -59,5 +61,8 @@ done
 # Devolvemos el valor original a la variable
 IFS=$SaveIFS
 
+# Eliminamos las tabulaciones del archivo 
+sed -i 's/^[ \t]*//' /tmp/ous.ldif
+
 # Añadimos las ous a LDAP
-ldapadd -D cn=$(echo $LDAProot),dc=$(echo $DominioLDAP | cut -d. -f1),dc=$(echo $DominioLDAP | cut -d. -f2) -w $LDAPpass -f /tmp/ous.ldif -c
+ldapadd -D cn=$(echo $LDAProot),dc=$(echo $DominioLDAP | cut -d. -f1),dc=$(echo $DominioLDAP | cut -d. -f2) -w $LDAPpass -f /tmp/ous.ldif -c &>>   ../Salidas/LDAP.sal

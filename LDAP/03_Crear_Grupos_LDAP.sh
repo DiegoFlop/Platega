@@ -27,4 +27,4 @@ gidNumber: $GIDinicial
 
 done
 
-ldapadd -D cn=$(echo $LDAProot),dc=$(echo $DominioLDAP | cut -d. -f1),dc=$(echo $DominioLDAP | cut -d. -f2) -w $LDAPpass -f /tmp/groups.ldif -c
+ldapadd -D cn=$(echo $LDAProot),dc=$(echo $DominioLDAP | cut -d. -f1),dc=$(echo $DominioLDAP | cut -d. -f2) -w $LDAPpass -f /tmp/groups.ldif -c &>>   ../Salidas/LDAP.sal

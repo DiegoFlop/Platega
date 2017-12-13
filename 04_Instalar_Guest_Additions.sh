@@ -1,11 +1,14 @@
 #!/bin/bash
 # Script creado por Fernández López, Diego
-#
-source 000_variables.sh
-#
 # En este script instalaremos de forma automática las Guest Additions siempre
 # que nuestra versión de VirtualBox admita la instalación de las Guest Additions
 # en nuestra maquina virtual.
+
+#######################################
+#              Variables              #
+#######################################
+source ../000_variables.sh
+
 test -d /mnt/cdrom || mkdir -p /mnt/cdrom
 
 echo "Compruebe que tiene insertado el CD-ROM de Virtualox de no ser así introdúzcalo ahora"

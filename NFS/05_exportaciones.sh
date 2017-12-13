@@ -16,6 +16,6 @@ $DirComun		$IPRed/$MaskRed(rw)" >> /etc/exports
 
 service nfs-kernel-server restart
 
-exportfs -v >> ..Salidas/NFS.sal
+exportfs -v >> ../Salidas/NFS.sal
 
-exportfs -ra >> ..Salidas/NFS.sal
+exportfs -ra >> ../Salidas/NFS.sal

@@ -21,5 +21,5 @@ done
 test -d $DirComun/departamentos || mkdir -p $DirComun/departamentos
 
 
-tree -l $DirUsers >> ..Salidas/NFS.sal
-tree -l $DirComun >> ..Salidas/NFS.sal
+tree -l $DirUsers >> ../Salidas/NFS.sal
+tree -l $DirComun >> ../Salidas/NFS.sal

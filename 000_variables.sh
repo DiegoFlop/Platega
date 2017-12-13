@@ -13,12 +13,11 @@ Fecha=`date +"%d-%m-%Y"`
 FechaLog=`date +"A las %T del %d-%m-%Y:=>"`
 Floopy=/mnt/floppy/
 DirConf=/mnt/floppy/Configuracion/
-
+DirSal=/mnt/floppy/Salidas/
 #################
 #    SERVIDOR   #
 #################
-CurrentNameServer=
-NewNameServer=
+NewNameServer=dserver00
 TarjetaServer=enp0s3
 ServerIp=172.16.5.10
 ServerMask=24
@@ -68,6 +67,8 @@ GIDinicial=9999
 ############
 Disk=sdb
 DiskSize=5G
+PartUsuarios=Usuarios
+PartComun=Comun
 DirUsers=/home/iesmuralla
 DirComun=/comun
 IPRed=172.16.5.0
@@ -80,7 +81,10 @@ MountComun=/media/comun
 ################
 #    SAMBA 3   #
 ################
-
+PassSMB=abc123.
+UserHomeDrive=Z:
+UserScript=inicio.bat
+MailDomain=iesmuro.local
 
 ################
 #    SAMBA 4   #
@@ -91,3 +95,7 @@ MountComun=/media/comun
 ###############
 #    Cuotas   #
 ###############
+CuotaSoftP=250000
+CuotaHardP=300000
+CuotaSoftA=150000
+CuotaHardA=200000

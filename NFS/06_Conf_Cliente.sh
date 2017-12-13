@@ -31,7 +31,7 @@ fi
 cp ../Configuracion/marcadores.sh /opt/
 
 # Hacemos que se ejecute al iniciar sesion un profesor
-sed -i '/# and Bourne compatible shells (bash(1), ksh(1), ash(1), \.\.\.)\./a sh \/opt\/06_bookmarks_client.sh' /etc/profile
+sed -i '/# and Bourne compatible shells (bash(1), ksh(1), ash(1), \.\.\.)\./a sh \/opt\/marcadores.sh' /etc/profile
 chmod 755 /opt/marcadores.sh
 
 service lightdm restart

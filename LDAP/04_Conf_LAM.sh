@@ -1,12 +1,12 @@
 #!/bin/bash
 # Script creado por Fernández López, Diego
-# En este script lo que haremos sera sustituir el archivo de configuraon de LAM
-# Por la configuracion correspondiente a nuestro dominio.
+# En este script lo que haremos sera sustituir el archivo de configuración de LAM
+# Por la configuración correspondiente a nuestro dominio.
 ######################################
 #            Variables               #
 ######################################
 source ../000_variables.sh
-source ../Funciones/LDAP_funciones.sh
+
 # comentamos y cambiamos la linea del admins
 sed -i 's/^admins/####&/' /usr/share/ldap-account-manager/config/lam.conf
 sed -i "/^####admins/a\admins: cn=$(echo $LDAProot),dc=$(echo $DominioLDAP | cut -d. -f1),dc=$(echo $DominioLDAP | cut -d. -f2)" /usr/share/ldap-account-manager/config/lam.conf

@@ -26,9 +26,9 @@ apt install bind9 -y
 ############################################################################
 # Advertimos de que configuren las zonas antes de continuar con la Instalación y
 # creación de zonas.
-read -rsp $'Por favor antes de continuar asegurese de tener configurado el archivo zonas.csv
-para ello puede conectarse de forma remota por SSH, con Notepad, otra terminal
-una vez que esté seguro de que esta configurado pulse ENTER...\n'
+read -rsp $'Por favor antes de continuar asegurese de tener configurado el archivo 
+/Configuracion/zonasDNS.csv para ello puede conectarse de forma remota por SSH,
+con Notepad, otra terminal una vez que esté seguro de que esta configurado pulse ENTER...\n'
 ############################################################################
 # Eliminamos el ENTER del Sistema Windows para dejarlo como el sistema Linux
 sed -i 's/\r//g' $ConfZonas

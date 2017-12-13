@@ -1,13 +1,13 @@
 #!/bin/bash
 # Script creado por Fernández López, Diego
-# en este script vamos a instalar el servidor LDAP completamente desatendio.
+# en este script vamos a instalar el servidor LDAP completamente desatendido.
 # para ello instalaremos el paquete debconf-utils
 # Una vez instalado crearemos las respuestas a las preguntas de LDAP
 # Al instalar LDAP durante la instalación solo pide la contraseña del roor de
-# LDAP, posteriormente reconfiguraremos el paquete de LDAP en el cual respoderemos
+# LDAP, posteriormente reconfiguraremos el paquete de LDAP en el cual responderemos
 # mas preguntas...
 # Seguidamente instalaremos otros paquetes que nos ayudaran a configurar de
-# forma grafica LDAP.
+# forma gráfica LDAP.
 # Por ultimo configuramos los paquetes de actualización y conexión contra LDAP.
 ######################################
 #            Variables               #
@@ -24,7 +24,7 @@ echo "slapd slapd/password1 password $LDAPpass" | debconf-set-selections
 echo "slapd slapd/password2 password $LDAPpass" | debconf-set-selections
 # Instalamos LDAP
 apt install -y slapd ldap-utils
-# Creamos el archivo de respuestas para la configuracion de LDAP
+# Creamos el archivo de respuestas para la configuración de LDAP
 echo "slapd slapd/root_password password $LDAPpass" | debconf-set-selections
 echo "slapd slapd/root_password_again password $LDAPpass" | debconf-set-selections
 echo "slapd slapd/no_configuration boolean false" | debconf-set-selections
@@ -40,7 +40,7 @@ echo "slapd slapd/move_old_database boolean true" | debconf-set-selections
 # Reconfiguramos LDAP
 dpkg-reconfigure -f noninteractive slapd
 
-# Instalamos LDAP y progamas complementarios
+# Instalamos LDAP y programas complementarios
 apt install -y ldapscripts ldap-account-manager tree
 apt install -y php-xml php-zip
 /etc/init.d/apache2 restart
@@ -61,6 +61,7 @@ apt install -y nslcd
 dpkg-reconfigure -f noninteractive nslcd
 
 # Iniciamos el servicio LDAP
-/etc/init.d/slapd restart
-/etc/init.d/nslcd restart
-/etc/init.d/nscd restart
+/etc/init.d/slapd restart &>>   ../Salidas/LDAP.sal
+/etc/init.d/nslcd restart &>>   ../Salidas/LDAP.sal
+/etc/init.d/nscd restart &>>   ../Salidas/LDAP.sal
+echo "$FechaLog $(/etc/init.d/slapd status | head -n 3)" >> ../Salidas/DHCP.sal

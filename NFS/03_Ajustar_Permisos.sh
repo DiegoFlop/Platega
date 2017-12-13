@@ -19,7 +19,7 @@ chown root:g-usuarios $DirUsers/alumnos
 chmod 750 $DirUsers/alumnos
 
 #Cartafoles cursos
-for CURSO in $(cat f00_cursos.txt)
+for CURSO in $(cat ../Configuracion/f00_cursos.txt)
 do
 	chown root:g-usuarios $DirUsers/alumnos/$CURSO
 	chmod 750 $DirUsers/alumnos/$CURSO
@@ -48,7 +48,7 @@ chmod 770 $DirComun/departamentos
 #IMPORTANTE: o que se lle engada ao script, debe valer para futuros crecementos en curso: asir1, asir2, etc.
 #Con so dar de alta no ficheiro f00_cursos.txt os cursos non deberamos tocar nada no presente script.
 
-for CURSO in $(cat f00_cursos.txt)
+for CURSO in $(cat ../Configuracion/f00_cursos.txt)
 do
 	chown root:g-$CURSO-profes $DirComun/$CURSO
 	chmod 775 $DirComun/$CURSO
